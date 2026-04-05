@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina no encontrada</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 24px;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
+            color: #10213b;
+        }
+
+        main {
+            max-width: 560px;
+            padding: 32px;
+            border-radius: 24px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 18px 45px rgba(16, 33, 59, 0.12);
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            color: #0c357d;
+        }
+
+        p {
+            margin: 0 0 18px;
+            line-height: 1.6;
+        }
+
+        a {
+            display: inline-block;
+            padding: 12px 18px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            color: #ffffff;
+            background: #1447a6;
+        }
+    </style>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            setTimeout(() => {
+                const parts = window.location.pathname.split("/").filter(Boolean);
+                const isProjectPage = window.location.hostname.endsWith(".github.io") && parts.length > 1;
+                const target = isProjectPage ? `/${parts[0]}/` : "/";
+                window.location.replace(target);
+            }, 1800);
+        });
+    </script>
+</head>
+<body>
+    <main>
+        <h1>404</h1>
+        <p>La pagina no existe o la publicacion quedo apuntando a una ruta incorrecta.</p>
+        <p>Te redirigimos al inicio automaticamente.</p>
+        <a href="./">Volver al inicio</a>
+    </main>
+</body>
+</html>
